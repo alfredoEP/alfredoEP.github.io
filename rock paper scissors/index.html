@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors - AI Strategy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="game">
+    <h1>Rock, Paper, Scissors</h1>
+    <div id="buttons">
+    <button id="rock" class="emoji">👊</button>
+    <button id="paper" class="emoji">✋</button>
+    <button id="scissors" class="emoji">✌️</button>
+    </div>
+    <h2>Game History</h2>
+    <div id="history">
+        <div id="history-log"></div>
+    </div>
+    <div id="scoreboard">
+    <p>
+        <strong>You:</strong> <span id="user-score">0</span> &nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Draw:</strong> <span id="draw-score">0</span> &nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Me:</strong> <span id="computer-score">0</span>
+    </p>
+    </div>
+    <button id="reset" class="reset">Reset Game</button>
+  </section>
+
+  <section id="explanation">
+    <h2>Explanation</h2>
+    <p>As you play, the computer learns your strategy using conditional probabilities...</p>
+    <p>The computer predicts what you're most likely to choose next based on your last choice and picks the object that beats it.</p>
+    <p>You can test its strategy by trying to trick it!</p>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

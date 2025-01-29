@@ -1,0 +1,61 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+  }
+  
+  #game {
+    margin-bottom: 40px;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 48px;
+    cursor: pointer;
+  }
+  
+  button.emoji {
+    font-size: 48px; /* Font size for emoji buttons */
+  }
+  
+  button.reset {
+    font-size: 16px; /* Font size for reset button */
+  }
+  
+  #scoreboard {
+    margin: 20px 0;
+  }
+  
+  #history {
+    margin-top: 20px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    height: 200px; /* Set a fixed height */
+  }
+  
+  #history-log p {
+    margin: 5px 0;
+  }
+  
+  #history-log:empty::before {
+    content: "No game history yet.";
+    color: #999;
+    font-style: italic;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .red {
+    color: red;
+  }
