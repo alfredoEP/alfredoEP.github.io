@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+}
+
+/* Chat Container */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Chat History - Initially Hidden */
+#chat-history {
+    width: 80%;
+    height: 0px; /* Starts at 0px, will expand */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 0px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+/* Input Box at Center Initially */
+#input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-top: 20vh;
+}
+
+/* Input Field */
+#user-input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Send Button */
+#send-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Chat Bubbles */
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 8px;
+    display: inline-block;
+}
+
+/* User Messages */
+.user-message {
+    background-color: #4a90e2;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+}
+
+/* System Messages */
+.system-message {
+    background-color: #e67e22;
+    color: white;
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* Animation: Expand Chat History */
+.expand {
+    height: 200px;
+    padding: 10px;
+}
+
+/* Move Input to Bottom */
+.move-input {
+    position: fixed;
+    bottom: 20px;
+    width: 80%;
+}

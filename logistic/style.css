@@ -1,0 +1,46 @@
+/* style.css */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  #map-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    cursor: grab;
+  }
+  
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    fill: red;
+  }
+  
+  .path {
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 3;
+    fill: none;
+  }
+  
+  #info-box {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
