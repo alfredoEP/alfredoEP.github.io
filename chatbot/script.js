@@ -7,19 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function addMessage(text, isUser) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add("message", isUser ? "user-message" : "system-message");
-        messageDiv.textContent = text;
+        messageDiv.textContent = text; // Use textContent to preserve formatting
         chatHistory.appendChild(messageDiv);
         chatHistory.scrollTop = chatHistory.scrollHeight; // Auto-scroll
     }
 
     function startChat() {
         if (userInput.value.trim() !== "") {
-            if (!chatHistory.classList.contains("expand")) {
-                // Transition to Chat Stage
-                chatHistory.classList.add("expand");
-                chatHistory.style.height = "200px"; // Ensure height is updated
-                inputContainer.classList.add("move-input");
-            }
+            // Calculate available height for chat history
+            const availableHeight = window.innerHeight - inputContainer.offsetHeight - 40; // 40px for margins
+            const adjustedHeight = availableHeight * 0.98; // Reduce height by 2%
+            chatHistory.style.height = `${adjustedHeight}px`; // Set height dynamically
+            inputContainer.classList.add("move-input");
 
             addMessage(userInput.value, true); // User message
             userInput.value = ""; // Clear input
@@ -27,15 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
             // Simulate System Reply
             setTimeout(() => {
                 addMessage("Hello! How can I assist you?", false);
-            }, 1000);
+            }, 200);
         }
     }
 
     // Event Listeners
     sendBtn.addEventListener("click", startChat);
-    userInput.addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
+    userInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" && !event.shiftKey) {
             startChat();
+            event.preventDefault(); // Prevent default behavior
         }
     });
 
