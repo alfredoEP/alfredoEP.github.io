@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!chatHistory.classList.contains("expand")) {
                 // Transition to Chat Stage
                 chatHistory.classList.add("expand");
+                chatHistory.style.height = "200px"; // Ensure height is updated
                 inputContainer.classList.add("move-input");
             }
 

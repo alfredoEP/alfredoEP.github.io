@@ -64,7 +64,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     margin: 8px;
-    display: inline-block;
+    display: block; /* Ensure each message occupies a whole level */
+    width: 100%; /* Occupy the full width */
 }
 
 /* User Messages */

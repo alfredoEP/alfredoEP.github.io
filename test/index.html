@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            display: inline-block;
+            min-width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flask API Fetch Test</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <p id="response">Waiting for response...</p>
+
+    <script>
+        function fetchData() {
+            fetch("http://34.51.38.13:5000/")  // Replace with your actual GCP VM IP
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("response").innerText = data.message;
+                })
+                .catch(error => {
+                    document.getElementById("response").innerText = "Error fetching data";
+                    console.error("Error:", error);
+                });
+        }
+    </script>
+</body>
+</html>
