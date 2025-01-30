@@ -41,7 +41,7 @@
 
     <script>
         function fetchData() {
-            fetch("http://34.51.38.13:5000/")
+            fetch("https://myflaskapi.duckdns.org/test")
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("response").innerText = data.message;
