@@ -33,18 +33,6 @@
             font-size: 12px;
         }
     </style>
-</head>
-<body>
-    <h1>Flask API Fetch Test</h1>
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <div style="display: flex; flex-direction: column; align-items: flex-start; max-width: 300px; margin-right: 20px;">
-            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchRoot()">Fetch Root</button>
-            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchStatus()">Fetch Status</button>
-            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchHelp()">Fetch Help</button>
-        </div>
-        <div id="response" style="height: 130px;">Waiting for response...</div>
-    </div>
-
     <script>
         function fetchData(endpoint) {
             fetch(`https://myflaskapi.duckdns.org/${endpoint}`)
@@ -58,9 +46,9 @@
             });
         }
         
-                function fetchRoot() {
-                    fetchData('');
-                }
+        function fetchRoot() {
+            fetchData('');
+        }
 
         function fetchStatus() {
             fetchData('status');
@@ -69,7 +57,32 @@
         function fetchHelp() {
             fetchData('help');
         }
+
+        function fetchUser() {
+            const userId = document.getElementById("userSelect").value;
+            fetchData(`user_id/${userId}`);
+        }
     </script>
+</head>
+<body>
+    <h1>Flask API Fetch Test</h1>
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; align-items: stretch; max-width: 300px; margin-right: 20px; flex: 1;">
+            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchRoot()">Fetch Root</button>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchStatus()">Fetch Status</button>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchHelp()">Fetch Help</button>
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; align-items: stretch; max-width: 300px; margin-right: 20px; flex: 1;">
+                <button style="width: 100%; margin-bottom: 10px;" onclick="fetchUser()">Fetch User</button>
+                <select id="userSelect" style="width: 100%; margin-bottom: 10px;">
+                    <option value="1">User 1</option>
+                    <option value="2">User 2</option>
+                    <option value="3">User 3</option>
+                </select>
+            </div>
+        </div>
+        <div id="response" style="flex: 2; padding: 20px; height: 100px; max-width: 300px; display: flex; justify-content: center; align-items: center;">Waiting for response...</div>
+    </div>
+
     <div class="timestamp">
         Last updated: February 01, 2025, 10:18 PM
     </div>
