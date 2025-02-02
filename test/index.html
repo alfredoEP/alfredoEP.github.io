@@ -35,20 +35,26 @@
     </style>
     <script>
         function fetchData(endpoint) {
-            fetch(`https://myflaskapi.duckdns.org/${endpoint}`)
+            fetch(
+                `https://alfredoepapi.duckdns.org/${endpoint}`,
+                {method: 'GET'}
+            )
             .then(response => response.json())
             .then(data => {
-                document.getElementById("response").innerText = data.message;
+            document.getElementById("response").innerText = data.message;
             })
             .catch(error => {
-                document.getElementById("response").innerText = "Error fetching data";
-                console.error("Error:", error);
+            document.getElementById("response").innerText = "Error fetching data";
+            console.error("Error:", error);
             });
         }
 
         function fetchUserData() {
             const userId = document.getElementById("userSelect").value;
-            fetch(`https://myflaskapi.duckdns.org/user_id/${userId}`)
+            fetch(
+                `https://alfredoepapi.duckdns.org/user_id/${userId}`,
+                {method: 'GET'}
+            )
             .then(response => response.json())
             .then(data => {
                 document.getElementById("response").innerText = JSON.stringify(data, null, 2);
