@@ -36,24 +36,42 @@
 </head>
 <body>
     <h1>Flask API Fetch Test</h1>
-    <button onclick="fetchData()">Fetch Data</button>
-    <p id="response">Waiting for response...</p>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; max-width: 300px; margin-right: 20px;">
+            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchRoot()">Fetch Root</button>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchStatus()">Fetch Status</button>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="fetchHelp()">Fetch Help</button>
+        </div>
+        <div id="response" style="height: 130px;">Waiting for response...</div>
+    </div>
 
     <script>
-        function fetchData() {
-            fetch("https://myflaskapi.duckdns.org/test")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("response").innerText = data.message;
-                })
-                .catch(error => {
-                    document.getElementById("response").innerText = "Error fetching data";
-                    console.error("Error:", error);
-                });
+        function fetchData(endpoint) {
+            fetch(`https://myflaskapi.duckdns.org/${endpoint}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById("response").innerText = "Error fetching data";
+                console.error("Error:", error);
+            });
+        }
+        
+                function fetchRoot() {
+                    fetchData('');
+                }
+
+        function fetchStatus() {
+            fetchData('status');
+        }
+
+        function fetchHelp() {
+            fetchData('help');
         }
     </script>
     <div class="timestamp">
-        Last updated: January 30, 2025, 2:18 AM
+        Last updated: February 01, 2025, 10:18 PM
     </div>
 </body>
 </html>
