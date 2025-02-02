@@ -45,6 +45,19 @@
                 console.error("Error:", error);
             });
         }
+
+        function fetchUserData() {
+            const userId = document.getElementById("userSelect").value;
+            fetch(`https://myflaskapi.duckdns.org/user_id/${userId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById("response").innerText = "Error fetching data";
+                console.error("Error:", error);
+            });
+        }
         
         function fetchRoot() {
             fetchData('');
@@ -60,7 +73,7 @@
 
         function fetchUser() {
             const userId = document.getElementById("userSelect").value;
-            fetchData(`user_id/${userId}`);
+            fetchUserData(`user_id/${userId}`);
         }
     </script>
 </head>
