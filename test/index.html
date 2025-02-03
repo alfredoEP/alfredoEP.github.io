@@ -102,6 +102,21 @@
                 console.error("Error:", error);
             });
         }
+        function deleteUser() {
+            const userId = document.getElementById("userSelect").value;
+
+            fetch(`https://alfredoepapi.duckdns.org/delete_user/${userId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById("response").innerText = "Error deleting user";
+                console.error("Error:", error);
+            });
+        }
     </script>
 </head>
 <body>
@@ -128,6 +143,8 @@
             <input id="emailInput" type="email" placeholder="Email" value="abcd@1234.com" style="width: 100%; margin-bottom: 10px;">
             <input id="variable1Input" type="number" placeholder="Variable 1" value="0" style="width: 100%; margin-bottom: 10px;">
             <button style="width: 100%; margin-bottom: 10px;" onclick="addUser()">Add User</button>
+            <input id="userIdInput" type="text" placeholder="User ID" style="width: 100%; margin-bottom: 10px;">
+            <button style="width: 100%; margin-bottom: 10px;" onclick="deleteUser()">Delete User</button>
         </div>
         <div id="response" style="flex: 2; padding: 20px; height: 100px; max-width: 300px; display: flex; justify-content: center; align-items: center;">Waiting for response...</div>
     </div>
