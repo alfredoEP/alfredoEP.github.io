@@ -103,7 +103,12 @@
             });
         }
         function deleteUser() {
-            const userId = document.getElementById("userSelect").value;
+            const userId = document.getElementById("userIdInput").value;
+
+            if (!userId) {
+                document.getElementById("response").innerText = "User ID is required";
+                return;
+            }
 
             fetch(`https://alfredoepapi.duckdns.org/delete_user/${userId}`, {
                 method: 'DELETE'
