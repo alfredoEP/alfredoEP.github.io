@@ -81,6 +81,27 @@
             const userId = document.getElementById("userSelect").value;
             fetchUserData(`user_id/${userId}`);
         }
+        function addUser() {
+            const name = document.getElementById("nameInput").value;
+            const email = document.getElementById("emailInput").value;
+            const variable1 = document.getElementById("variable1Input").value;
+
+            fetch('https://alfredoepapi.duckdns.org/add_user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, email: email, variable_1: variable1 })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById("response").innerText = "Error adding user";
+                console.error("Error:", error);
+            });
+        }
     </script>
 </head>
 <body>
@@ -98,6 +119,12 @@
                     <option value="3">User 3</option>
                 </select>
             </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; align-items: stretch; max-width: 300px; margin-right: 20px; flex: 1;">
+            <input id="nameInput" type="text" placeholder="Name" value="Alfredo" style="width: 100%; margin-bottom: 10px;">
+            <input id="emailInput" type="email" placeholder="Email" value="abcd@1234.com" style="width: 100%; margin-bottom: 10px;">
+            <input id="variable1Input" type="number" placeholder="Variable 1" value="0" style="width: 100%; margin-bottom: 10px;">
+            <button style="width: 100%; margin-bottom: 10px;" onclick="addUser()">Add User</button>
         </div>
         <div id="response" style="flex: 2; padding: 20px; height: 100px; max-width: 300px; display: flex; justify-content: center; align-items: center;">Waiting for response...</div>
     </div>
