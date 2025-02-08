@@ -5,7 +5,7 @@ document.getElementById("login-form").addEventListener("submit", async function(
     const password = document.getElementById("password").value;
     
     try {
-        const response = await fetch("http://alfredoepapi.duckdns.org/authenticate", { // Update if hosted elsewhere
+        const response = await fetch("https://alfredoepapi.duckdns.org/authenticate", { // Update if hosted elsewhere
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
