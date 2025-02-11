@@ -37,6 +37,20 @@ button:hover {
     background-color: #218838;
 }
 
+.forgot-password {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.forgot-password:hover {
+    background-color: #e68900;
+}
+
 .timestamp {
     position: absolute;
     bottom: 10px;
