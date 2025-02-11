@@ -24,27 +24,22 @@ input {
     border-radius: 5px;
 }
 
-button {
+.btn {
     background-color: #28a745;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-button:hover {
+.btn:hover {
     background-color: #218838;
 }
 
 .forgot-password {
     background-color: #ff9800;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 .forgot-password:hover {
