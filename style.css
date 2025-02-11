@@ -52,3 +52,17 @@ html, body {
     text-align: center;
     flex: 0 0 15%;
 }
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.footer .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer .social-links img {
+    height: 24px;
+    width: 24px;
+}
