@@ -17,6 +17,11 @@ document.getElementById("login-form").addEventListener("submit", async function(
         
         if (response.ok) {
             alert("Good! Welcome back sir.");
+            document.getElementById('login-button').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = '../index.html';
+            }, 100);
         } else {
             alert("Authentication failed: " + result.detail);
         }
