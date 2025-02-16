@@ -11,6 +11,9 @@ body {
     height: 100vh;
     overflow: hidden;
     cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   svg {
@@ -43,4 +46,10 @@ body {
   .hidden {
     display: none;
   }
-  
+
+  #map-image {
+    max-width: 1200px;
+    max-height: 628px;
+    width: auto;
+    height: auto;
+  }
