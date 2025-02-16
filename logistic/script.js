@@ -112,8 +112,8 @@ function fetchFakeDatabase(coord) {
 // Arrow Click Logic
 map.addEventListener("click", (event) => {
   if (event.target.classList.contains("arrow")) {
-    infoBox.style.left = `${event.clientX}px`;
-    infoBox.style.top = `${event.clientY}px`;
+    infoBox.style.left = `${event.offsetX}px`;
+    infoBox.style.top = `${event.offsetY}px`;
     infoBox.classList.remove("hidden");
 
     document.getElementById("name").textContent = "Arrow 1";
@@ -130,18 +130,14 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-const popup = document.createElement("div");
-popup.id = "popup";
-document.body.appendChild(popup);
-
 map.addEventListener("click", (event) => {
   const x = event.offsetX;
   const y = event.offsetY;
-  popup.style.left = `${event.clientX + 10}px`;
-  popup.style.top = `${event.clientY + 10}px`;
-  popup.textContent = `Coordinates: (${x}, ${y})`;
-  popup.style.display = "block";
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 2000);
+  alert(`Coordinates: (${x}, ${y})`);
+});
+
+mapImage.addEventListener("click", (event) => {
+  const x = event.offsetX;
+  const y = event.offsetY;
+  alert(`Coordinates: (${x}, ${y})`);
 });

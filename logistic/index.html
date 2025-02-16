@@ -8,18 +8,15 @@
 </head>
 <body>
   <div id="map-container">
-    <img id="map-image" src="../assets/map.png" width="100%" height="100%"/>
+    <img id="map-image" src="../assets/map.png" width="20%" height="20%"/>
+    <div id="popup"></div>
+    <div id="info-box" class="hidden">
+      <p><strong>Name:</strong> <span id="name"></span></p>
+      <p><strong>Origin:</strong> <span id="origin"></span></p>
+      <p><strong>Destination:</strong> <span id="destination"></span></p>
+      <p><strong>Cargo:</strong> <span id="cargo"></span></p>
+    </div>
   </div>
-
-  <div id="popup"></div>
-
-  <div id="info-box" class="hidden">
-    <p><strong>Name:</strong> <span id="name"></span></p>
-    <p><strong>Origin:</strong> <span id="origin"></span></p>
-    <p><strong>Destination:</strong> <span id="destination"></span></p>
-    <p><strong>Cargo:</strong> <span id="cargo"></span></p>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
