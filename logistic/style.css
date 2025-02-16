@@ -53,3 +53,13 @@ body {
     width: auto;
     height: auto;
   }
+
+  #popup {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    display: none;
+    pointer-events: none;
+  }

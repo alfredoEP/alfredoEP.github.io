@@ -129,3 +129,19 @@ document.addEventListener("keydown", (event) => {
     infoBox.classList.add("hidden");
   }
 });
+
+const popup = document.createElement("div");
+popup.id = "popup";
+document.body.appendChild(popup);
+
+map.addEventListener("click", (event) => {
+  const x = event.offsetX;
+  const y = event.offsetY;
+  popup.style.left = `${event.clientX + 10}px`;
+  popup.style.top = `${event.clientY + 10}px`;
+  popup.textContent = `Coordinates: (${x}, ${y})`;
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 2000);
+});
